@@ -117,6 +117,7 @@
                         </div>
     </section>
 
+    @if($user->isContributeur() || $user->isAdmin())
    <section class="edit-profil">
             <form action="" method="post" class="form-edit">
                 <section class="information-personnelle">
@@ -148,11 +149,12 @@
                             <div class="submit">
                                 <button type="submit"><i class="fas fa-check"></i>Supprimer</button>
                 </section>
-                
+
             </form>
         </section>
+  @endif
 
-
+          @if($user->isAdmin())
             <p>Ajouter un évenement :</p>
             @include('inc/messages')
             <form action="{{ route('events.store') }}" method="post" class="form-event" enctype="multipart/form-data">
@@ -201,6 +203,7 @@
                     <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
                 </section>
               </form>
+        @endif
      </section>
 
     </article>
@@ -208,6 +211,6 @@
 </body>
 
 
-    
+
 
 @endsection

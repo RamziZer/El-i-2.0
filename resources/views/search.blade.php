@@ -5,11 +5,11 @@
 
 
 <div class="header">
-        <form method="POST" action="{{ route('search.search') }}" >
+        <form method="GET" action="{{ route('search.search') }}" >
             @csrf
             <h1>Trouvez tous les évènements qui vous intéressent</h1>
             <div class="form-box">
-                <input type="text" class="search-field event" name="name" placeholder="Events,Peronnes ...">
+                <input type="text" class="search-field event" name="name" placeholder="Events,Peronnes ..." value={{ old('name') }}>
                 <input type="text" class="search-field location" name="ville" placeholder="Ville">
                 <button class="search-btn" type="submit">Rechercher</button>
             </div>

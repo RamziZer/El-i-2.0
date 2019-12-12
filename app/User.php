@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Event');
     }
+
+    public function isAdmin()
+    {
+      return $this->role_id == 1;
+    }
+
+    public function isContributeur()
+    {
+      return $this->role_id == 2;
+    }
 }

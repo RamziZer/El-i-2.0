@@ -25,11 +25,10 @@ Route::get('/register',function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/search/results', 'SearchController@search')->name('search.search');
-
 /* Route::post('/profile/store','ProfileController@store')->name('profile.store');
  */
-Route::resource('/search','SearchController');
+Route::get('/search','SearchController@index')->name('search');
+Route::get('/search/results', 'SearchController@search')->name('search.search');
 
 Route::resource('/events','EventController');
 
