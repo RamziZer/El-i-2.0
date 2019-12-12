@@ -24,11 +24,11 @@
                 <p>{{$event->date}}
                 </p>
             </div>
-            <button> <a href="/search/{{$event->id}}">Afficher</a></button>
+            <button> <a href="{{ route('events.show', ['event' => $event->id ])}}">Afficher</a></button>
         </div>
     @endforeach
 </div>
 
-    
+
 {{ $events->links() }}
 @endsection

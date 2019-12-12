@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use App\Theme;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class ThemeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,46 +33,29 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
-          'title' => 'required',
-          'date' => 'required'
-        ]);
-
-        Event::create([
-          "nom" => request('title'),
-          "date" => request('date'),
-          "nom_rue" => request('nom_r'),
-          "ville" => request('ville'),
-          "descriptif" => request('description'),
-          "codepostal" => request('code_postal'),
-          "complement" => request('cmp_adr'),
-        ]);
-
-        return redirect('/search')->with('success', 'Event Created');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Theme $theme)
     {
-        return view('eventpage', [
-          'events' => $event
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit(Theme $theme)
     {
         //
     }
@@ -81,10 +64,10 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
+     * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, Theme $theme)
     {
         //
     }
@@ -92,10 +75,10 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Event  $event
+     * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy(Theme $theme)
     {
         //
     }

@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
 use Illuminate\Http\Request;
+use App\Theme;
 
-class EventController extends Controller
+class ProfileController extends Controller
 {
+
+    // public function __cunstruct()
+    // {
+    //   $this->middleware('auth');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+      return view('profile', [
+        'themes' => Theme::all(),
+        'user' => auth()->user()
+        ]);
     }
 
     /**
@@ -33,46 +42,29 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
-          'title' => 'required',
-          'date' => 'required'
-        ]);
-
-        Event::create([
-          "nom" => request('title'),
-          "date" => request('date'),
-          "nom_rue" => request('nom_r'),
-          "ville" => request('ville'),
-          "descriptif" => request('description'),
-          "codepostal" => request('code_postal'),
-          "complement" => request('cmp_adr'),
-        ]);
-
-        return redirect('/search')->with('success', 'Event Created');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show()
     {
-        return view('eventpage', [
-          'events' => $event
-        ]);
+        // return view('profile')->with('user', auth()->user());
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
         //
     }
@@ -81,10 +73,10 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -92,10 +84,10 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Event  $event
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
         //
     }

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/eventpage', 'EventpageController@index' );
+// Route::get('/eventpage', 'EventpageController@index' );
 
 Route::get('/register',function() {
     return view('auth.register');
@@ -25,12 +25,12 @@ Route::get('/register',function() {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/search/results', 'SearchController@search')->name('search.search'); 
+Route::post('/search/results', 'SearchController@search')->name('search.search');
 
-/* Route::post('/profile/store','ProfileController@store')->name('profile.store'); 
+/* Route::post('/profile/store','ProfileController@store')->name('profile.store');
  */
 Route::resource('/search','SearchController');
 
-Route::resource('/events','EventpageController');
+Route::resource('/events','EventController');
 
-Route::resource('/profile','ProfileController');
+Route::resource('/profile','ProfileController')->middleware('auth');

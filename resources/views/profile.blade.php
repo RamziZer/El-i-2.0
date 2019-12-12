@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
         <link rel="stylesheet" href="{{asset('css/footer1.css')}}">
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 
-        <script src="https://kit.fontawesome.com/f02947e5f2.js" crossorigin="anonymous"></script>    
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Alatsi|Righteous&display=swap" rel="stylesheet">     
+        <script src="https://kit.fontawesome.com/f02947e5f2.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alatsi|Righteous&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/profile.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
                 @if (Route::has('login'))
                 @auth
                 <a href="{{url('/home')}}"></a>
-                @else 
+                @else
                 <li><a href="{{route('login')}}">Sing UP/IN</a></li>
                 @endif
                 @endauth
@@ -45,7 +45,7 @@
 
         </div>
 
-        
+
     </header>
 
 <body>
@@ -53,11 +53,11 @@
  --}}
     <article>
      <img src="/home/hririche/git/el-i/ProjetWebL3/profile-img.png">
-     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
      <ul>
-         <li style="font-family: 'Alatsi', sans-serif; font-size: 19px;">@username</li>
-         <li style="font-family: 'Righteous', cursive; font-size:27px"> Nom & prenom</li>
-         <li style="font-family: 'Amatic SC', cursive; font-size:25px" ><i class="fas fa-globe-africa"></i> adresse + icon </li>
+         <li style="font-family: 'Alatsi', sans-serif; font-size: 19px;">{{ $user->name }}</li>
+         {{-- <li style="font-family: 'Righteous', cursive; font-size:27px"> {{$user->first_name}} & prenom</li> --}}
+         {{-- <li style="font-family: 'Amatic SC', cursive; font-size:25px" ><i class="fas fa-globe-africa"></i> adresse + icon </li> --}}
 
      </ul>
 
@@ -88,7 +88,7 @@
                 <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                 <img src="./img/nimg.jpg">
                 <button>click Here <i class="fas fa-glasses"></i></button>
-    
+
             </div>
 
 
@@ -97,7 +97,7 @@
                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
-        
+
                 </div>
     </section>
     <section class="apropos2">
@@ -105,24 +105,24 @@
                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
-        
+
                 </div>
-        
-        
+
+
                 <div class="box">
                         <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                         <img src="/home/hririche/git/el-i/img/nimg.jpg">
                         <button>click Here <i class="fas fa-glasses"></i></button>
-            
+
                     </div>
-        
-        
-        
+
+
+
                     <div class="box">
                             <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                             <img src="/home/hririche/git/el-i/img/nimg.jpg">
                             <button>click Here <i class="fas fa-glasses"></i></button>
-                
+
                         </div>
     </section>
 
@@ -131,27 +131,27 @@
                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
-        
+
                 </div>
-        
-        
+
+
                 <div class="box">
                         <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                         <img src="/home/hririche/git/el-i/img/nimg.jpg">
                         <button>click Here <i class="fas fa-glasses"></i></button>
-            
+
                     </div>
-        
-        
-        
+
+
+
                     <div class="box">
                             <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                             <img src="/home/hririche/git/el-i/img/nimg.jpg">
                             <button>click Here <i class="fas fa-glasses"></i></button>
-                
+
                         </div>
     </section>
-     
+
    <!--  <section class="edit-profil">
             <p>Modifier vos information</p>
             <h2>Edit Profile</h2>
@@ -247,16 +247,16 @@
                                 <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                                 <img src="/home/hririche/git/el-i/img/nimg.jpg">
                                 <button>click Here <i class="fas fa-glasses"></i></button>
-                    
+
                             </div>
-                
-                
-                
+
+
+
                             <div class="box">
                                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                                     <button>click Here <i class="fas fa-glasses"></i></button>
-                        
+
                                 </div>
 
 
@@ -267,75 +267,56 @@
                 </section> -->
             <p>Ajouter un évenement :</p>
             @include('inc/messages')
-            {{-- <form action="{{ route('search.search') }}" method="post" class="form-event"> --}}
- {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST' , 'class' => 'form-event' ]) !!}
-                    
-    
+            <form action="{{ route('events.store') }}" method="post" class="form-event" enctype="multipart/form-data">
+              @csrf
                 <section class="add-event">
                     <legend>Information sur l'évenement</legend>
                     <div class="label-input">
-{{--                         <label for="title">Titre</label>
-                        <input type="text" name="title" id="title" required /> --}}
-                        {{Form::label('title','Titre')}}
-                        {{Form::text('title','',['id' => 'title','placeholder' => 'Title'])}}
+                        <label for="title">Titre</label>
+                        <input type="text" name="title" id="title" />
                     </div>
                     <div class="label-input">
-                        {{-- <label for="date_event">Date</label>
-                        <input type="date" name="date_event" id="date_event" /> --}}
-                        {{Form::label('date','Date')}}
-                        {{Form::date('date','',['id' => 'date_event','placeholder' => 'Date'])}}
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date_event" />
                     </div>
-                    
-                    
+
+
                     <div class="label-input">
                         <label for="image">Ajouter une image</label>
                         <input type="file" name="image" id="image" />
                     </div>
                     <div class="label-input">
-                        {{-- <label for="description">Description</label> --}}
-                        {{Form::label('description','Description')}}
-                        {{-- <textarea name="description" id="description"></textarea> --}}
-                        {{Form::textarea('description','',['id' => 'description','placeholder' => 'Description'])}}
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description"></textarea>
                     </div>
                 </section>
                 <section class="adresse">
                     <legend>Informations sur l'adresse</legend>
                     <div class="label-input">
-                        {{-- <label for="nom_r">Nom de la rue</label>
-                        <input type="text" name="nom_r" id="nom_r" /> --}}
-                        {{Form::label('nom_r','Nom de la rue')}}
-                        {{Form::text('nom_r','',['id' => 'nom_r','placeholder' => 'Nom de la rue'])}}
+                        <label for="nom_r">Nom de la rue</label>
+                        <input type="text" name="nom_r" id="nom_r" />
                     </div>
                     <div class="label-input">
-                        {{-- <label for="ville">Ville</label>
-                        <input type="text" name="ville" id="ville" /> --}}
-                        {{Form::label('ville','Ville')}}
-                        {{Form::text('ville','',['id' => 'ville','placeholder' => 'Ville'])}}
+                        <label for="ville">Ville</label>
+                        <input type="text" name="ville" id="ville" />
                     </div>
                     <div class="label-input">
-                        {{-- <label for="code_postal">Code postal</label>
-                        <input type="text" name="code_postal" id="code_postal" /> --}}
-                        {{Form::label('code_postal','Code postal')}}
-                        {{Form::text('code_postal','',['id' => 'code_postal','placeholder' => 'Code postal'])}}
+                        <label for="code_postal">Code postal</label>
+                        <input type="text" name="code_postal" id="code_postal" />
                     </div>
                     <div class="label-input">
-                       {{--  <label for="cmp_adr">Complément d'adresse</label> --}}
-                       {{--  <textarea id="cmp_adr" name="cmp_adr"></textarea> --}}
-                        {{Form::label('cmp_adr','Complément d\'adresse')}}
-                        {{Form::textarea('cmp_adr','',['id' => 'cmp_adr','placeholder' => 'Complément d\'adresse'])}}
+                       <label for="cmp_adr">Complément d'adresse</label>
+                       <textarea id="cmp_adr" name="cmp_adr"></textarea>
                     </div>
                 </section>
                 <section class="submit">
-                    {{Form::submit('Ajouter',['class'=>'fas fa-check'])}}
-                    {{-- <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button> --}}
+                    <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
                 </section>
-{{--             </form>
- --}}       
- {!! Form::close() !!}
-     </section>    
-    
+              </form>
+     </section>
+
     </article>
-    
+
 </body>
 
 
@@ -344,7 +325,7 @@
 
 
 
-        
+
             <div class="footer-items">
 
                     <h1>Evarois crée des possibles</h1>
@@ -353,12 +334,12 @@
                           choses, trouver du soutien, sortir de leur zone de confort
                            et vivre leur passion, ensemble
                     </p>
-        
-        
-        
-        
+
+
+
+
                 </div>
-                
+
 
 
 
@@ -374,11 +355,11 @@
 
 
                     </ul>
-                    
-        
-        
-        
-        
+
+
+
+
+
             </div>
             <div class="footer-items">
 
@@ -386,8 +367,8 @@
                     <div class="border"></div>
                     <ul>
                        <li><i class="fas fa-map-marked-alt"></i> 1516 avenue augusstin fliche</li>
-                       <li><i class="fas fa-sms"></i> +33-7-673-262-89</li> 
-                       <li><i class="fas fa-envelope"></i> support@evarois.fr </li> 
+                       <li><i class="fas fa-sms"></i> +33-7-673-262-89</li>
+                       <li><i class="fas fa-envelope"></i> support@evarois.fr </li>
                     </ul>
                     <div class="social-media">
                         <a href=""><i class="fab fa-facebook-square"></i></a>
@@ -397,13 +378,13 @@
 
 
                     </div>
-                    
-        
-        
-        
-        
+
+
+
+
+
             </div>
-            
+
 
 
 
@@ -421,7 +402,7 @@
     <div class="footer-bottom">
 
             Copyright &copy; El i & Co 2019 , All right reserved.
-        </div>            
+        </div>
 
 
 

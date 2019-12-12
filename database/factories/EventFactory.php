@@ -4,6 +4,7 @@
 
 use App\Event;
 use App\User;
+use App\Theme;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
 
@@ -18,6 +19,7 @@ $factory->define(Event::class, function (Faker $faker) {
         'effectif_min' => $faker->randomDigit,
         'descriptif' => $faker->text,
         'user_id' => User::all()->random()->id,
+        'theme_id' => Theme::all()->random()->id,
         'nom_rue' => $faker->text,
         'ville' => $faker->word,
         'codepostal' => $faker ->randomDigit,

@@ -29,6 +29,7 @@ class CreateEventsTable extends Migration
             $table->integer('effectif_max')->default('0');
             $table->integer('effectif_min')->default('0');
             $table->integer('user_id')->default('0')->unsigned();
+            $table->bigInteger('theme_id')->unsigned();
 
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
