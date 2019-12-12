@@ -33,9 +33,24 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        request()->validate([
+          'title' => 'required',
+          'date' => 'required'
+        ]);
+
+        Event::create([
+          "nom" => request('title'),
+          "date" => request('date'),
+          "nom_rue" => request('nom_r'),
+          "ville" => request('ville'),
+          "descriptif" => request('description'),
+          "codepostal" => request('code_postal'),
+          "complement" => request('cmp_adr'),
+        ]);
+
+        return redirect('/search')->('success', 'Event Created');
     }
 
     /**
@@ -46,7 +61,9 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('eventpage', [
+          'events' => $event
+        ]);
     }
 
     /**
