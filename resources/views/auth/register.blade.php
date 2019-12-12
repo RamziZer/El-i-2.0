@@ -1,14 +1,12 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<link rel="stylesheet" href="{{asset('css/stylesingup.css')}}">
+<div class="login-page">
+		<div class="form">
+    
+			<form class ="register-form" {{-- action="{{ route('register') }}" --}} method="POST">                
                         @csrf
 
                         <div class="form-group row">
@@ -53,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
@@ -67,11 +65,9 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
-                        </div>
+                        </div> --}}
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        
 @endsection

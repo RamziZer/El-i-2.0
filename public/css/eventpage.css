@@ -1,0 +1,130 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("./img/back.jpg");
+	height: 100vh;
+	background-size: cover;
+    background-position: center;
+    color: #eee;
+}
+
+/*.nb {
+    background-color: #fff;
+    width: 80%;
+    max-height: 7000px;
+    height: 100% !important;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 100px;
+} */
+h1 {
+    text-align: center;
+    padding:  auto;
+    margin: 30px;
+}
+
+.gird-container {
+    display: grid;
+    grid-auto-columns: 500px;
+    grid-auto-rows:  200px;
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+
+.gird-item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+    
+}
+
+.gird-item-2 {
+    grid-row: span 3;
+    background: rgb(0,0,0,0.5);
+}
+.gird-item-3 {
+    grid-column: span 1;
+    grid-row: span 3;
+    background: rgb(0,0,0,0.5);
+}
+.gird-item-4 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background: rgb(0,0,0,0.5);;
+}
+.location {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("./img/location.jpg");
+    background-size: cover;
+}
+.image {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.7)), url("./img/image1.jpg");
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+div.inscrire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+button {
+        background-color: #4CAF50;
+        border: 1px solid black;
+        text-align: center;
+        padding:  auto;
+
+    
+}
+button:hover {
+    color: blue;
+}
+
+.rat {
+    width: 93%;
+    max-width: 350px;
+    background: #111;
+    color: #eee;
+    border-radius: 5px ;
+    border: 2px solid #444;
+    overflow: hidden;
+}
+
+form.stars {
+    width: 270px;
+    display: block;
+    margin: auto;
+}
+
+input.star {
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 10px;
+    font-size: 36px;
+    color: #444;
+    transition: all 0.2s;
+}
+
+input.star:checked ~ label.star:before {
+    content: '\f005';
+    color: #fd4;
+    transition: all 0.2s;
+}
+
+input.star-5:checked ~ label.star:before {
+    color: #fe7;
+    text-shadow: 0 0 20px #952 ;
+}
+
+label.star::before {
+    content: '\f006';
+    font-family: FontAwesome;
+}

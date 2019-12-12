@@ -1,0 +1,196 @@
+body {
+font: 15px/1.5 Arial,Helvetica,sans-serif ;
+padding: 0;
+margin: 0;
+background-color: #f4f4f4 ;
+
+
+}
+.container{
+
+width:80%;
+margin: auto;
+overflow: hidden;
+}
+
+
+header{
+
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+header a {
+
+color : #ffffff;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 16px;
+
+}
+header ul{
+    margin: 0;
+    padding: 0;
+
+
+
+}
+
+header li {
+
+    float:left;
+    display: inline;
+    padding: 0 20px 0 20px ;
+
+}
+header #logo {
+    float: left;
+}
+header nav {
+    float:right;
+    margin-top: 10px;
+}
+header h1 {
+
+    margin: 0;
+}
+
+header a:hover {
+
+color:#cccccc ;
+font-weight:bold ;
+
+}
+#showcase{
+
+    min-height: 400px;
+    background: url('../myweb/img/image1.jpg') no-repeat ;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+
+}
+#showcase h1{
+
+    margin-top: 80px;
+    font-size: 55px;
+    margin-bottom: 10px;
+
+
+
+}
+#showcase p {
+    font-size: 20px;
+
+
+
+}
+#newsletter{
+
+    padding: 15px;
+    color:#ffffff ;
+    background:#35424a ;
+}
+#newsletter h1{
+    float:left;
+
+
+}
+#newsletter form {
+    float: right;
+    padding: 15px;
+
+
+}
+#newsletter input[type="email"]{
+
+    padding: 5px;
+    height: 28px;
+    width: 250px;
+
+}
+.boutton1 {
+    height: 38px;
+    background: #e8491d;
+    border 0;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+/* les 3 box  */
+#theboxes .column {
+    text-align: center;
+    padding: 30px;
+    width: 20%;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-right: 50px;
+
+}
+#theboxes{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#showcase2{
+    background-color: #f05537 ;
+
+
+    font-family: 'Indie Flower', cursive; 
+
+    font-size: 25px;
+    text-align: center;
+
+
+
+
+
+
+
+
+}
+footer {
+
+    background: #35424a;
+    display: flex;
+    color: #ffffff;
+    font: bold 16px sans-serif;
+    height: 450px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > div {
+    width: 40%;
+    height: 80%;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > div > * {
+    border: 1px solid white;
+    width: 100%;
+}
+
+footer > div.contact > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+footer > div.contact > div > i {
+    font-size: 35px;
+    margin-right: 50px;
+
+    background-color: grey;
+    border-radius: 50%;
+    padding: 10px;
+}
