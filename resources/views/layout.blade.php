@@ -57,99 +57,98 @@
 
     </header>
     @yield('content')
-    <!--
+
     <div class="footer">
-                <div class="inner-footer">
-
-
-
-
-                        <div class="footer-items">
-
-                                <h1>Hello guys!!</h1>
-                                <p> Hello guys!!
-                                        This video shows you how you can
-                                        create a Responsive footer section
-                                        Hope this video is clear to you.
-                                </p>
-
-
-
-
-                            </div>
-
-
-
-
-                        <div class="footer-items">
-
-                                <h2>Quick links </h2>
-                                <div class="border"></div>
-                                <ul>
-                                    <a href=""><li> Home </li></a>
-                                    <a href=""><li> Home </li></a>
-                                    <a href=""><li> Home </li></a>
-                                    <a href=""><li> Home </li></a>
-
-
-                                </ul>
-
-
-
-
-
-                        </div>
-                        <div class="footer-items">
-
-                                <h2> Contacter Nous </h2>
-                                <div class="border"></div>
-                                <ul>
-                                   <li><i class="fas fa-map-marked-alt"></i> 1516 avenue augusstin fliche</li>
-                                   <li><i class="fas fa-sms"></i> +33-7-673-262-89</li>
-                                   <li><i class="fas fa-envelope"></i> support@evarois.fr </li>
-                                </ul>
-                                <div class="social-media">
-                                    <a href=""><i class="fab fa-facebook-square"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-twitter-square"></i></a>
-
-
-
-                                </div>
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-                <div class="footer-bottom">
-
-                        Copyright &copy; El i & Co 2019 , All right reserved.
+        <div class="inner-footer">
+    
+    
+    
+    
+                <div class="footer-items">
+    
+                        <h1>Evarois crée des possibles</h1>
+                        <p> Evarois est une plateforme conçue pour trouver et créer des événements locales.
+                             Les gens utilisent Evarois pour rencontrer de nouvelles personnes, apprendre de nouvelles
+                              choses, trouver du soutien, sortir de leur zone de confort
+                               et vivre leur passion, ensemble
+                        </p>
+    
+    
+    
+    
                     </div>
-
-
-
-
-
-
-
-
-                </div> -->
+    
+    
+    
+    
+                <div class="footer-items">
+    
+                        <h2>Quick links </h2>
+                        <div class="border"></div>
+                        <ul>
+                            <a href=""><li> contacter nourrissent</li></a>
+                            <a href=""><li> Conditions</li></a>
+                            <a href=""><li> Confidentialité </li></a>
+                            <a href=""><li> Cookies </li></a>
+    
+    
+                        </ul>
+    
+    
+    
+    
+    
+                </div>
+                <div class="footer-items">
+    
+                        <h2> Contacter Nous </h2>
+                        <div class="border"></div>
+                        <ul>
+                           <li><i class="fas fa-map-marked-alt"></i> 1516 avenue augusstin fliche</li>
+                           <li><i class="fas fa-sms"></i> +33-7-673-262-89</li>
+                           <li><i class="fas fa-envelope"></i> support@evarois.fr </li>
+                        </ul>
+                        <div class="social-media">
+                            <a href=""><i class="fab fa-facebook-square"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-twitter-square"></i></a>
+    
+    
+    
+                        </div>
+    
+    
+    
+    
+    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+        <div class="footer-bottom">
+    
+                Copyright &copy; El i & Co 2019 , All right reserved.
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    </div>
 </body>
 
 </html>

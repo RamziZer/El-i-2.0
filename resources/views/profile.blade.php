@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
+
+@section('content')
 <head>
         <link rel="stylesheet" href="{{asset('css/footer1.css')}}">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -9,44 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alatsi|Righteous&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/profile.css')}}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <title>profile web page </title>
 </head>
-<header>
-        <div class="container">
-        <div id="logo">
-
-        <h1> le titre de  logo</h1>
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="/"> HOME</a></li>
-                <li><a href="/search"> RECHERCHE</a></li>
-                @if (Route::has('login'))
-                @auth
-                <a href="{{url('/home')}}"></a>
-                @else
-                <li><a href="{{route('login')}}">Sing UP/IN</a></li>
-                @endif
-                @endauth
-
-            </ul>
-
-
-        </nav>
-
-
-        </div>
-
-
-    </header>
 
 <body>
 {{--     @include('inc.messages')
@@ -243,96 +208,6 @@
 </body>
 
 
-    <div class="footer">
-    <div class="inner-footer">
+    
 
-
-
-
-            <div class="footer-items">
-
-                    <h1>Evarois crée des possibles</h1>
-                    <p> Evarois est une plateforme conçue pour trouver et créer des événements locales.
-                         Les gens utilisent Evarois pour rencontrer de nouvelles personnes, apprendre de nouvelles
-                          choses, trouver du soutien, sortir de leur zone de confort
-                           et vivre leur passion, ensemble
-                    </p>
-
-
-
-
-                </div>
-
-
-
-
-            <div class="footer-items">
-
-                    <h2>Quick links </h2>
-                    <div class="border"></div>
-                    <ul>
-                        <a href=""><li> contacter nourrissent</li></a>
-                        <a href=""><li> Conditions</li></a>
-                        <a href=""><li> Confidentialité </li></a>
-                        <a href=""><li> Cookies </li></a>
-
-
-                    </ul>
-
-
-
-
-
-            </div>
-            <div class="footer-items">
-
-                    <h2> Contacter Nous </h2>
-                    <div class="border"></div>
-                    <ul>
-                       <li><i class="fas fa-map-marked-alt"></i> 1516 avenue augusstin fliche</li>
-                       <li><i class="fas fa-sms"></i> +33-7-673-262-89</li>
-                       <li><i class="fas fa-envelope"></i> support@evarois.fr </li>
-                    </ul>
-                    <div class="social-media">
-                        <a href=""><i class="fab fa-facebook-square"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-
-
-
-                    </div>
-
-
-
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-    <div class="footer-bottom">
-
-            Copyright &copy; El i & Co 2019 , All right reserved.
-        </div>
-
-
-
-
-
-
-
-</div>
-
-   </html>
+@endsection

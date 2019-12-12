@@ -35,7 +35,9 @@ h1 {
     grid-row: span 2;
     
 }
-
+.infos {
+    height : 300px
+}
 .gird-item-2 {
     grid-row: span 3;
     background: rgb(0,0,0,0.5);
