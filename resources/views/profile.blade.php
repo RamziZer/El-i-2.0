@@ -152,119 +152,42 @@
                         </div>
     </section>
 
-   <!--  <section class="edit-profil">
-            <p>Modifier vos information</p>
-            <h2>Edit Profile</h2>
+   <section class="edit-profil">
             <form action="" method="post" class="form-edit">
                 <section class="information-personnelle">
-                    <legend>Informations personnelles</legend>
+                    <legend>Fonctions d'ajout pour admin</legend>
                     <div class="label-input">
-                        <label for="nom">Nom</label>
+                        <label for="nom">Theme</label>
                         <input type="text" name="nom" id="nom" />
                     </div>
                     <div class="label-input">
-                        <label for="prenom">Prenom</label>
-                        <input type="text" name="prenom" id="prenom" />
+                        <label for="Add-cont">contributeur</label>
+                        <input type="text" name="" id="" />
                     </div>
-                    <div class="label-input">
-                        <label for="civilite">Civilié</label>
-                        <input type="text" name="civilite" id="civilite" />
-                    </div>
-                    <div class="label-input">
-                        <label for="date_nai">Date naissance</label>
-                        <input type="date" name="" id="" />
-                    </div>
-                    <div class="label-input">
-                        <label for="tel">Numéro de télephone</label>
-                        <input type="tel" name="tel" id="tel" />
-                    </div>
-                    <div class="label-input">
-                        <label for="bio">Bio</label>
-                        <textarea name="bio" id="bio"></textarea>
+                    <div class="submit">
+                        <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
                     </div>
                 </section>
-                <section class="adresse">
-                    <legend>Informations sur l'adresse</legend>
-                    <div class="label-input">
-                        <label for="num_r">Numéro de la rue</label>
-                        <input type="number" name="num_r" id="num_r" />
-                    </div>
-                    <div class="label-input">
-                        <label for="nom_r">Nom de la rue</label>
-                        <input type="text" name="nom_r" id="nom_r" />
-                    </div>
-                    <div class="label-input">
-                        <label for="ville">Ville</label>
-                        <input type="text" name="ville" id="ville" />
-                    </div>
-                    <div class="label-input">
-                        <label for="pays">Pays</label>
-                        <input type="text" name="pays" id="pays" />
-                    </div>
-                    <div class="label-input">
-                        <label for="code_postal">Code postal</label>
-                        <input type="text" name="code_postal" id="code_postal" />
-                    </div>
-                    <div class="label-input">
-                        <label for="cmp_adr">Complément d'adresse</label>
-                        <textarea id="cmp_adr" name="cmp_adr"></textarea>
-                    </div>
+                <section>
+                    <form action="" method="post" class="form-edit">
+                        <section class="information-personnelle">
+                            <legend>Fonctions de suppression pour admin</legend>
+                            <div class="label-input">
+                                <label for="nom">Theme</label>
+                                <input type="text" name="nom" id="nom" />
+                            </div>
+                            <div class="label-input">
+                                <label for="Add-cont">contributeur</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div class="submit">
+                                <button type="submit"><i class="fas fa-check"></i>Supprimer</button>
                 </section>
-                <section class="information-compte">
-                    <legend>Informations sur le compte</legend>
-                    <div class="label-input">
-                        <label for="pseudo">Pseudo</label>
-                        <input type="text" name="pseudo" id="pseudo"/>
-                    </div>
-                    <div class="label-input">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email"/>
-                    </div>
-                    <div class="label-input">
-                        <label for="mdp">Mot de passe</label>
-                        <input type="password" name="mdp" id="mdp"/>
-                        <input type="password" name="Cmdp" id="Cmdp"/>
-                    </div>
-                </section>
-                <section class="submit">
-                    <button type="submit"><i class="fas fa-check"></i> Modifier</button>
-                    <button type="reset"><i class="fas fa-times"></i> Annuler</button>
-                </section>
+                
             </form>
         </section>
 
 
-        <section class="contribution">
-
-
-            <h2>Contributions</h2>
-            <p>Ici vous trouverer les contribution de l'utilisateur : </p>
-                <section class="myevents">
-
-
-
-                        <div class="box">
-                                <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
-                                <img src="/home/hririche/git/el-i/img/nimg.jpg">
-                                <button>click Here <i class="fas fa-glasses"></i></button>
-
-                            </div>
-
-
-
-                            <div class="box">
-                                    <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
-                                    <img src="/home/hririche/git/el-i/img/nimg.jpg">
-                                    <button>click Here <i class="fas fa-glasses"></i></button>
-
-                                </div>
-
-
-
-
-
-
-                </section> -->
             <p>Ajouter un évenement :</p>
             @include('inc/messages')
             <form action="{{ route('events.store') }}" method="post" class="form-event" enctype="multipart/form-data">
