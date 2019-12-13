@@ -18,18 +18,18 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->date('date');
             $table->string('nom');
-            $table->integer('late')->default('0'); /* GPS */
-            $table->integer('long')->default('0'); /* GPS */
+            $table->integer('late')->nullable(); /* GPS */
+            $table->integer('long')->nullable(); /* GPS */
             $table->text('nom_rue');
-            $table->text('complement');
+            $table->text('complement')->nullable();
             $table->string('ville');
             $table->integer('codepostal');
-            $table->string('theme')->default('nb');
+            $table->string('theme');
             $table->text('descriptif');
-            $table->integer('effectif_max')->default('0');
-            $table->integer('effectif_min')->default('0');
-            $table->integer('user_id')->default('0')->unsigned();
-            $table->bigInteger('theme_id')->unsigned();
+            $table->integer('effectif_max')->nullable();
+            $table->integer('effectif_min')->nullable();
+            $table->integer('user_id')->nullable()->unsigned();
+            $table->bigInteger('theme_id')->nullable()->unsigned();
 
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

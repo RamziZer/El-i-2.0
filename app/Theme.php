@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Theme extends Model
 {
-    protected $guraded = [];
+    protected $guarded = [];
 
     public function events()
     {

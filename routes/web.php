@@ -31,5 +31,5 @@ Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/results', 'SearchController@search')->name('search.search');
 
 Route::resource('/events','EventController');
-
+Route::resource('/theme','ThemeController');
 Route::resource('/profile','ProfileController')->middleware('auth');

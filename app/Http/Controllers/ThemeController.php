@@ -24,7 +24,7 @@ class ThemeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,8 +34,15 @@ class ThemeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        request()->validate([
+            'nom' => 'required'
+        ]);
+        Theme::create([
+            "title" => request('nom')
+        ]);
+    
+        return redirect('/profile')->with('success', 'Theme ajouté');
     }
 
     /**
@@ -78,8 +85,11 @@ class ThemeController extends Controller
      * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Theme $theme)
+    public function destroy(Theme $id)
     {
-        //
+        $theme = Theme::find($id);
+        $theme -> delete();
+
+        return redirect('/profile')->with('success', 'Theme Supprimé');
     }
 }

@@ -119,7 +119,8 @@
 
     @if($user->isContributeur() || $user->isAdmin())
    <section class="edit-profil">
-            <form action="" method="post" class="form-edit">
+            <form action="{{ route('theme.store') }}" method="post" class="form-edit">
+                @csrf
                 <section class="information-personnelle">
                     <legend>Fonctions d'ajout pour admin</legend>
                     <div class="label-input">
@@ -135,13 +136,19 @@
                     </div>
                 </section>
                 <section>
-                    <form action="" method="post" class="form-edit">
-                        <section class="information-personnelle">
+                <form  method="POST" class="form-edit">
+                    @csrf   
+                    <section class="information-personnelle">
                             <legend>Fonctions de suppression pour admin</legend>
                             <div class="label-input">
-                                <label for="nom">Theme</label>
-                                <input type="text" name="nom" id="nom" />
-                            </div>
+                                    <label for="theme">Theme</label>
+        
+                            <select name="theme"  >
+                                @foreach ($themes as $theme )
+                            <option>{{$theme->title}}</option>
+ 
+                                @endforeach
+                              </select>
                             <div class="label-input">
                                 <label for="Add-cont">contributeur</label>
                                 <input type="text" name="" id="" />
@@ -178,6 +185,16 @@
                     <div class="label-input">
                         <label for="description">Description</label>
                         <textarea name="description" id="description"></textarea>
+                    </div>
+                    <div class="label-input">
+                            <label for="theme">Theme</label>
+
+                    <select name="theme" >
+                        @foreach ($themes as $theme )
+                    <option>{{$theme->title}}</option>
+                        
+                        @endforeach
+                      </select>
                     </div>
                 </section>
                 <section class="adresse">

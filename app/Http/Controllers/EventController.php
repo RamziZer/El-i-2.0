@@ -37,7 +37,12 @@ class EventController extends Controller
     {
         request()->validate([
           'title' => 'required',
-          'date' => 'required'
+          'date' => 'required',
+          'nom_r' => 'required',
+          'cmp_adr' => 'required',
+          'description' => 'required',
+          'ville' => 'required',
+          'code_postal' => 'required'
         ]);
 
         Event::create([
@@ -45,6 +50,7 @@ class EventController extends Controller
           "date" => request('date'),
           "nom_rue" => request('nom_r'),
           "ville" => request('ville'),
+          "theme" => request('theme'),
           "descriptif" => request('description'),
           "codepostal" => request('code_postal'),
           "complement" => request('cmp_adr'),
