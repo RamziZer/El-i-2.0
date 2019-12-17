@@ -40,6 +40,6 @@ class Event extends Model
       'email'      => 'ramzi.zeroual@etu.umontpellier.fr'
     );
       $client = new Client(); //GuzzleHttp\Client
-      $geo = $client->request('GET', 'https://nominatim.openstreetmap.org/?'. $data)
+      $geo = $client->request('GET', 'https://nominatim.openstreetmap.org/?'. $data);
     }
 }

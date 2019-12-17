@@ -20,6 +20,7 @@ $factory->define(Event::class, function (Faker $faker) {
         'descriptif' => $faker->text,
         'user_id' => User::all()->random()->id,
         'theme_id' => Theme::all()->random()->id,
+        'num_rue' => $faker->randomDigit,
         'nom_rue' => $faker->text,
         'ville' => $faker->word,
         'codepostal' => $faker ->randomDigit,

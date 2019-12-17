@@ -38,6 +38,7 @@ class EventController extends Controller
         request()->validate([
           'title' => 'required',
           'date' => 'required',
+          'num_r' => 'required',
           'nom_r' => 'required',
           'cmp_adr' => 'required',
           'description' => 'required',
@@ -48,6 +49,7 @@ class EventController extends Controller
         Event::create([
           "nom" => request('title'),
           "date" => request('date'),
+          "num_rue" => request('num_r'),
           "nom_rue" => request('nom_r'),
           "ville" => request('ville'),
           "theme" => request('theme'),

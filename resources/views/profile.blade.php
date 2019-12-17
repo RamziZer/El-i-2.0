@@ -74,7 +74,7 @@
                 </div>
                 @endforeach --}}
             </section>
-
+            @if($user->isAdmin() || $user->isContributeur())
             @if($user->isAdmin())
             <section class="edit-profil">
                 <form action="{{ route('theme.store') }}" method="post" class="form-edit">
@@ -150,7 +150,6 @@
                         </section>
                         @endif
 
-                        @if($user->isContributeur() || $user->isAdmin())
                         <p>Ajouter un évenement :</p>
                         @include('inc/messages')
                         <form action="{{ route('events.store') }}" method="post" class="form-event" enctype="multipart/form-data">
@@ -189,6 +188,10 @@
                             <section class="adresse">
                                 <legend>Informations sur l'adresse</legend>
                                 <div class="label-input">
+                                    <label for="num_r">Numero de la rue</label>
+                                    <input type="text" name="num_r" id="num_r" />
+                                </div>
+                                <div class="label-input">
                                     <label for="nom_r">Nom de la rue</label>
                                     <input type="text" name="nom_r" id="nom_r" />
                                 </div>
@@ -209,9 +212,9 @@
                                 <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
                             </section>
                         </form>
-                        @endif
+                        
                     </section>
-
+                 @endif   
                 </article>
                 {{ $events->links() }}
             </body>

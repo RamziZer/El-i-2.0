@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('nom');
             $table->integer('late')->nullable(); /* GPS */
             $table->integer('long')->nullable(); /* GPS */
+            $table->integer('num_rue');
             $table->text('nom_rue');
             $table->text('complement')->nullable();
             $table->string('ville');
