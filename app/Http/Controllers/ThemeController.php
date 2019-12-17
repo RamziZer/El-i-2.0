@@ -85,9 +85,9 @@ class ThemeController extends Controller
      * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Theme $id)
+    public function destroy(Theme $themes)
     {
-        $theme = Theme::find($id);
+        $theme = Theme::find($themes);
         $theme -> delete();
 
         return redirect('/profile')->with('success', 'Theme Supprimé');

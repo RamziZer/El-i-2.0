@@ -29,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/results', 'SearchController@search')->name('search.search');
-
+Route::delete('/proflie/{id}', 'ThemeController@destroy')->name('theme.destroy');
 Route::resource('/events','EventController');
 Route::resource('/theme','ThemeController');
 Route::resource('/profile','ProfileController')->middleware('auth');

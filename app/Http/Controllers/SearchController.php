@@ -26,7 +26,9 @@ class SearchController extends Controller
     public function search()
     {
       $q = request('name');
-      $events = Event::where('nom', 'like', '%' . $q . '%')->paginate(5);
+      /* $v = request ('ville');
+      $d = request ('date'); */
+      $events = Event::where('nom', 'like', '%' . $q . '%')/* ->orwhere('ville','like','%'.$v.'%')->orwhere('date',$d)-> */->paginate(5) ;
       request()->flash();
       return view('search')->with('events',$events);
     }

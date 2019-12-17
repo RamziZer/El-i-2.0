@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Theme;
+use App\Event;
 
 class ProfileController extends Controller
 {
@@ -20,10 +21,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $events = Event::paginate(3);
       return view('profile', [
         'themes' => Theme::all(),
-        'user' => auth()->user()
-        ]);
+        'user' => auth()->user(),
+        ])->with('events', $events);
     }
 
     /**

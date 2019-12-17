@@ -54,29 +54,17 @@ article div.liens a {
 
     font-family: 'Righteous';
 }
-.apropos{
+.past-participe, .participe, .contribution ,.edit-profil  {
     padding: 23px;
-    height: 600px;
+    min-height: 600px;
     justify-content: space-around;
     display: flex;
     flex-direction: row;
 
 }
-.apropos2{
-    padding: 23px;
-    height: 600px;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
 
-}
-.apropos3{
-    padding: 23px;
-    height: 600px;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-
+.edit-profil {
+    flex-direction: column;
 }
 .form-edit{
     font-family: 'Permanent Marker', cursive;
