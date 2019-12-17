@@ -12,9 +12,9 @@
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alatsi|Righteous&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/profile.css')}}">
-        
+
     </head>
-    
+
     <body>
         {{--     @include('inc.messages')
         --}}
@@ -25,28 +25,28 @@
                 <li style="font-family: 'Alatsi', sans-serif; font-size: 19px;">{{ $user->name }}</li>
                 {{-- <li style="font-family: 'Righteous', cursive; font-size:27px"> {{$user->first_name}} & prenom</li> --}}
                 {{-- <li style="font-family: 'Amatic SC', cursive; font-size:25px" ><i class="fas fa-globe-africa"></i> adresse + icon </li> --}}
-                
+
             </ul>
-            
+
             <div class="liens">
-                
+
                 <a class="active" id="past-participe" href="#">J'ai participé aux</a>
                 <a id="participe" href="#">je participerai aux</a>
                 <a id="contribution" href="#">mes contributions</a>
                 <a id="edit-profil" href="#">Gerer</a>
             </div>
             <section class="past-participe">
-               
-                
-                
-                
-                
-                
+
+
+
+
+
+
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
-                    
+
                 </div>
             </section>
             <section class="participe">
@@ -54,15 +54,15 @@
                     <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
-                    
+
                 </div>
-                
-         
+
+
             </section>
-            
+
             <section class="contribution">
-                
-           {{--      
+
+           {{--
                 @foreach($events as $event)
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> {{$event->nom}}</h2>
@@ -70,11 +70,11 @@
                     <p>{{$event->date}}
                     </p>
                     <button><a href="{{ route('events.show', ['event' => $event->id ])}}">click Here <i class="fas fa-glasses"></i></button>
-                    
+
                 </div>
                 @endforeach --}}
             </section>
-            
+
             @if($user->isAdmin())
             <section class="edit-profil">
                 <form action="{{ route('theme.store') }}" method="post" class="form-edit">
@@ -89,10 +89,17 @@
                             <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
                         </div>
                     </form>
-                    <form action="">
+                    <form action="{{ route('upgrade_contributeur') }}" method="POST" class="form-edit">
+                      @csrf
                         <div class="label-input">
-                            <label for="Add-cont">contributeur</label>
-                            <input type="text" name="Add-cont" id="Add-cont" />
+                          <label for="nom">Contributeur</label>
+                            <select name="contributeur">
+                                @foreach ($users as $user )
+
+                                <option value="{{ $user->id }}">{{$user->name}}</option>
+
+                                @endforeach
+                            </select>
                         </div>
                         <div class="submit">
                             <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
@@ -100,18 +107,17 @@
                     </section>
                     <section>
                     </form>
-                 <form  {{-- action ="{{ route('theme.destroy', ['theme' => $themes->theid])}}" --}}  method="POST" class="form-edit">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
+                 <form action ="{{ route('theme_destroy')}}"  method="POST" class="form-edit">
+                        @csrf
+                        @method('DELETE')
                         <section class="information-personnelle" >
                             <legend>Fonctions de suppression pour admin</legend>
                             <div class="label-input">
                                 <label for="theme">Theme</label>
-                                
-                                <select name="theme" id = "theme" >
+
+                                <select name="theme" id="theme">
                                     @foreach ($themes as $theme )
-                                    <option>{{$theme->title}}</option>
-                                    
+                                    <option value="{{ $theme->theid }}">{{$theme->title}}</option>
                                     @endforeach
                                 </select>
                                 <div class="submit">
@@ -120,26 +126,30 @@
                             </div>
                 </form>
 
-                    <form action="">            <div class="label-input">
+                    <form action ="{{ route('contributeur_destroy')}}"  method="POST" class="form-edit">
+                      @csrf
+                      @method('DELETE')
+
+                      <div class="label-input">
                                     <label for="contributeur">contributeur</label>
                                     <select name="contributeur">
-                                        @foreach ($user as $utili )
-                                        
-                                        <option>{{$user->id}}</option>
-                                        
+                                        @forelse ($contribiteursUsers as $user )
+
+                                        <option value="{{ $user->id }}">{{$user->name}}</option>
+
                                         @endforeach
                                     </select>
-                                </div>
+                        </div>
                                 <div class="submit">
                                     <button type="submit"><i class="fas fa-check"></i>Delete</button>
                                 </div>
                     </form>
-        
-                                
+
+
 
                         </section>
                         @endif
-                        
+
                         @if($user->isContributeur() || $user->isAdmin())
                         <p>Ajouter un évenement :</p>
                         @include('inc/messages')
@@ -155,8 +165,8 @@
                                     <label for="date">Date</label>
                                     <input type="date" name="date" id="date_event" />
                                 </div>
-                                
-                                
+
+
                                 <div class="label-input">
                                     <label for="image">Ajouter une image</label>
                                     <input type="file" name="image" id="image" />
@@ -167,11 +177,11 @@
                                 </div>
                                 <div class="label-input">
                                     <label for="theme">Theme</label>
-                                    
+
                                     <select name="theme" >
                                         @foreach ($themes as $theme )
                                         <option>{{$theme->title}}</option>
-                                        
+
                                         @endforeach
                                     </select>
                                 </div>
@@ -201,14 +211,13 @@
                         </form>
                         @endif
                     </section>
-                    
+
                 </article>
                 {{ $events->links() }}
             </body>
             <script src="{{asset('js/profile.js')}}"></script>
-            
-            
-            
-            
+
+
+
+
             @endsection
-            

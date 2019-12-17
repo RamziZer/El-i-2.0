@@ -61,4 +61,26 @@ class User extends Authenticatable
     {
       return $this->role_id == 2;
     }
+
+    public function makeContributeur()
+    {
+      $this->update([
+        'role_id' => 2
+      ]);
+    }
+
+    public function participate($event)
+    {
+      $this->events()->attach($event);
+    }
+
+    public function participatePas($event)
+    {
+      $this->events()->detach($event);
+    }
+
+    public function alreadyParticipating($event)
+    {
+      return !! $this->events->contains($event);
+    }
 }

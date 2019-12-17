@@ -8,6 +8,8 @@ class Theme extends Model
 {
     protected $guarded = [];
 
+    protected $primaryKey = 'theid';
+
     public function events()
     {
       return $this->hasMany('App\Event');

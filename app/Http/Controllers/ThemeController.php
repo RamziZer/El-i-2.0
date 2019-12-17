@@ -34,14 +34,14 @@ class ThemeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         request()->validate([
             'nom' => 'required'
         ]);
         Theme::create([
             "title" => request('nom')
         ]);
-    
+
         return redirect('/profile')->with('success', 'Theme ajouté');
     }
 
@@ -85,10 +85,10 @@ class ThemeController extends Controller
      * @param  \App\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Theme $themes)
+    public function destroy()
     {
-        $theme = Theme::find($themes);
-        $theme -> delete();
+        $theme = Theme::find(request('theme'));
+        $theme->delete();
 
         return redirect('/profile')->with('success', 'Theme Supprimé');
     }

@@ -29,7 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/results', 'SearchController@search')->name('search.search');
-Route::delete('/proflie/{id}', 'ThemeController@destroy')->name('theme.destroy');
+// Route::delete('/proflie/{id}', 'ThemeController@destroy')->name('theme.destroy');
 Route::resource('/events','EventController');
 Route::resource('/theme','ThemeController');
+Route::delete('/theme', 'ThemeController@destroy')->name('theme_destroy');
 Route::resource('/profile','ProfileController')->middleware('auth');
+Route::delete('/profile/downgradeContributeur', 'ProfileController@destroy')->name('contributeur_destroy');
+Route::post('/profile/makeContributeur', 'UpgradeContributeurController@update')->name('upgrade_contributeur');
+
+Route::post('/event/participate/{event}', 'ParticipationController@update')->name('participate')->middleware('auth');
+Route::post('/event/participatePas/{event}', 'ParticipationController@destroy')->name('participatePas')->middleware('auth');

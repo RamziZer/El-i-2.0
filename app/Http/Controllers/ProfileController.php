@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Theme;
 use App\Event;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -25,6 +26,8 @@ class ProfileController extends Controller
       return view('profile', [
         'themes' => Theme::all(),
         'user' => auth()->user(),
+        'users' => User::where('role_id', null)->get(),
+        'contribiteursUsers' => User::where('role_id', 2)->get()
         ])->with('events', $events);
     }
 
@@ -89,8 +92,13 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        $user = User::find(request('contributeur'));
+        $user->update([
+          'role_id' => null
+        ]);
+
+        return redirect('/profile');
     }
 }
