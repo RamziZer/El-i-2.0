@@ -67,6 +67,7 @@
 
     <div class="gird-container">
         <div class="gird-item gird-item-1 image">
+          {{-- <img src="{{ $events->avatar }}" alt=""> --}}
         </div>
         <div class="gird-item gird-item-2">
             <h1>{{$events->nom}}</h1>
@@ -101,33 +102,39 @@
           </form>
         @endif
             {{-- <button>s’inscrire / se désinscrire d'un événement</button> <br> --}}
-            @if($events->alreadyPassed() && auth()->user()->alreadyParticipating($events))
+            @if($events->alreadyPassed() && auth()->user()->alreadyParticipating($events) && ! auth()->user()->alreadyReviewed($events) )
             <div class="rat">
-                <form class="stars" action="">
+                <form class="stars" action="{{ route('review', ['event' => $events->id ]) }}" method="POST">
+                  @csrf
                         <p>Rating system</p>
 
-                        <input type="radio" class="star star-5" id="star-5" name="star">
+                        {{-- <input type="radio" class="star star-5" id="star-5" name="star">
 
-                        <label for="star-5" class="star star-5"></label>
+                        <label for="star-5" class="star star-5"></label> --}}
 
-                        <input type="radio" name="star" class="star star-4" id="star-4">
+                        <input type="radio" name="star" class="star star-4" id="star-4" value="4">
 
                         <label for="star-4" class="star star-4"></label>
 
-                        <input type="radio" name="star" class="star star-3" id="star-3">
+                        <input type="radio" name="star" class="star star-3" id="star-3" value="3">
 
                         <label for="star-3" class="star star-3"></label>
 
-                        <input type="radio" name="star" class="star star-2" id="star-2">
+                        <input type="radio" name="star" class="star star-2" id="star-2" value="2">
 
                         <label for="star-2" class="star star-2"></label>
 
-                        <input type="radio" name="star" class="star star-1" id="star-1">
+                        <input type="radio" name="star" class="star star-1" id="star-1" value="1">
 
                         <label for="star-1" class="star star-1"></label>
+
+                        <button type="submit" name="button">Review</button>
                     </form>
+
             </div>
           @endif
+
+          <h1>{{ $events->noteFinal }}</h1>
 
         </div>
     </div>

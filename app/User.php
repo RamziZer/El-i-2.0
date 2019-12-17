@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Event');
     }
 
+    public function notes()
+    {
+      return $this->hasMany('App\Note');
+    }
+
     public function isAdmin()
     {
       return $this->role_id == 1;
@@ -81,16 +86,29 @@ class User extends Authenticatable
 
     public function participatedEvents()
     {
-      return $this->events()->where('date', '<', now())->get();
+      return $this->events()->where('date', '<', now());
     }
 
-    public function fitureParticipateEvents()
+    public function futureParticipateEvents()
     {
-      return $this->events()->where('date', '>', now())->get();
+      return $this->events()->where('date', '>', now());
     }
 
     public function alreadyParticipating($event)
     {
       return !! $this->events->contains($event);
+    }
+
+    public function alreadyReviewed($event)
+    {
+      return !! $this->notes->contains($event->id);
+    }
+
+    public function leaveReview($event, $note)
+    {
+      $this->notes()->create([
+        'event_id' => $event,
+        'note' => $note
+      ]);
     }
 }

@@ -18,6 +18,11 @@ class Event extends Model
         return $this->belongsToMany('App\User');
     }
 
+    public function notes()
+    {
+      return $this->hasMany('App\Note');
+    }
+
     public function theme()
     {
       return $this->belongsTo('App\Theme');
@@ -26,6 +31,16 @@ class Event extends Model
     public function alreadyPassed()
     {
       return $this->date->lessThan(now());
+    }
+
+    public function getAvatarAttribute($avatar)
+    {
+      return $avatar ? asset('storage/' . $avatar) : asset('css/img/image1.jpg');
+    }
+
+    public function getNoteFinalAttribute()
+    {
+      return $this->notes()->avg('note');
     }
 
     public function geoCoord($event)

@@ -36,28 +36,24 @@
                 <a id="edit-profil" href="#">Gerer</a>
             </div>
             <section class="past-participe">
-
-
-
-
-
-
+              @foreach ($user->participatedEvents as $event)
                 <div class="box">
-                    <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
+                    <h2 style="font-family: 'Lato', sans-serif;"> {{ $event->nom }}</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
 
                 </div>
+              @endforeach
             </section>
             <section class="participe">
+              @foreach ($user->futureParticipateEvents as $event)
                 <div class="box">
-                    <h2 style="font-family: 'Lato', sans-serif;"> title event</h2>
+                    <h2 style="font-family: 'Lato', sans-serif;"> {{ $event->nom }}</h2>
                     <img src="/home/hririche/git/el-i/img/nimg.jpg">
                     <button>click Here <i class="fas fa-glasses"></i></button>
 
                 </div>
-
-
+              @endforeach
             </section>
 
             <section class="contribution">
@@ -212,9 +208,9 @@
                                 <button type="submit"><i class="fas fa-check"></i> Ajouter évenement</button>
                             </section>
                         </form>
-                        
+
                     </section>
-                 @endif   
+                 @endif
                 </article>
                 {{ $events->links() }}
             </body>

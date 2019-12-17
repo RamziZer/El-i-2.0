@@ -43,7 +43,8 @@ class EventController extends Controller
           'cmp_adr' => 'required',
           'description' => 'required',
           'ville' => 'required',
-          'code_postal' => 'required'
+          'code_postal' => 'required',
+          'avatar' => ['image', 'mimes:jpeg,png,jpg,gif,svg'],
         ]);
 
         $event = Event::create([
@@ -56,6 +57,7 @@ class EventController extends Controller
           "descriptif" => request('description'),
           "codepostal" => request('code_postal'),
           "complement" => request('cmp_adr'),
+          'avatar' => request()->file('image')->store('events', 'public')
         ]);
 
         $event->geoCoord($event);

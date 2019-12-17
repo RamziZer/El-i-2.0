@@ -26,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('ville');
             $table->integer('codepostal');
             $table->string('theme');
+            $table->string('avatar')->nullable();
             $table->text('descriptif');
             $table->integer('effectif_max')->nullable();
             $table->integer('effectif_min')->nullable();

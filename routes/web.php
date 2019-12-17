@@ -39,3 +39,5 @@ Route::post('/profile/makeContributeur', 'UpgradeContributeurController@update')
 
 Route::post('/event/participate/{event}', 'ParticipationController@update')->name('participate')->middleware('auth');
 Route::post('/event/participatePas/{event}', 'ParticipationController@destroy')->name('participatePas')->middleware('auth');
+
+Route::post('/event/note/{event}', 'NoteController@store')->name('review')->middleware('auth');

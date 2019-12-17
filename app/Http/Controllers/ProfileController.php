@@ -23,7 +23,6 @@ class ProfileController extends Controller
     public function index()
     {
         $events = Event::paginate(3);
-        dd(auth()->user()->participatedEvents());
       return view('profile', [
         'themes' => Theme::all(),
         'user' => auth()->user(),
