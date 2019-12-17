@@ -1,4 +1,4 @@
-use App\Theme;
+
 
 @extends('layout')
 
@@ -62,7 +62,7 @@ use App\Theme;
             
             <section class="contribution">
                 
-                
+           {{--      
                 @foreach($events as $event)
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> {{$event->nom}}</h2>
@@ -72,7 +72,7 @@ use App\Theme;
                     <button><a href="{{ route('events.show', ['event' => $event->id ])}}">click Here <i class="fas fa-glasses"></i></button>
                     
                 </div>
-                @endforeach
+                @endforeach --}}
             </section>
             
             @if($user->isAdmin())
@@ -84,6 +84,9 @@ use App\Theme;
                         <div class="label-input">
                             <label for="nom">Theme</label>
                             <input type="text" name="nom" id="nom" />
+                        </div>
+                        <div class="submit">
+                            <button type="submit"><i class="fas fa-check"></i> Ajouter</button>
                         </div>
                     </form>
                     <form action="">
@@ -97,7 +100,7 @@ use App\Theme;
                     </section>
                     <section>
                     </form>
-                    <form  {{-- action ="{{ route('theme.destroy', ['theme' => $themes->theid])}}" --}}  method="POST" class="form-edit">
+                 <form  {{-- action ="{{ route('theme.destroy', ['theme' => $themes->theid])}}" --}}  method="POST" class="form-edit">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <section class="information-personnelle" >
@@ -111,7 +114,13 @@ use App\Theme;
                                     
                                     @endforeach
                                 </select>
-                                <div class="label-input">
+                                <div class="submit">
+                                    <button type="submit"><i class="fas fa-check"></i>Delete</button>
+                                </div>
+                            </div>
+                </form>
+
+                    <form action="">            <div class="label-input">
                                     <label for="contributeur">contributeur</label>
                                     <select name="contributeur">
                                         @foreach ($user as $utili )
@@ -123,9 +132,11 @@ use App\Theme;
                                 </div>
                                 <div class="submit">
                                     <button type="submit"><i class="fas fa-check"></i>Delete</button>
-                                </section>
+                                </div>
+                    </form>
+        
                                 
-                            </form>
+
                         </section>
                         @endif
                         
