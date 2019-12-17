@@ -18,8 +18,8 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->date('date');
             $table->string('nom');
-            $table->integer('late')->nullable(); /* GPS */
-            $table->integer('long')->nullable(); /* GPS */
+            $table->float('late')->nullable(); /* GPS */
+            $table->float('long')->nullable(); /* GPS */
             $table->integer('num_rue');
             $table->text('nom_rue');
             $table->text('complement')->nullable();

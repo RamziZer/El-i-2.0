@@ -46,7 +46,7 @@ class EventController extends Controller
           'code_postal' => 'required'
         ]);
 
-        Event::create([
+        $event = Event::create([
           "nom" => request('title'),
           "date" => request('date'),
           "num_rue" => request('num_r'),
@@ -57,6 +57,8 @@ class EventController extends Controller
           "codepostal" => request('code_postal'),
           "complement" => request('cmp_adr'),
         ]);
+
+        $event->geoCoord($event);
 
         return redirect('/search')->with('success', 'Event Created');
     }

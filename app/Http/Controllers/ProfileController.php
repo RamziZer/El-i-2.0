@@ -23,11 +23,12 @@ class ProfileController extends Controller
     public function index()
     {
         $events = Event::paginate(3);
+        dd(auth()->user()->participatedEvents());
       return view('profile', [
         'themes' => Theme::all(),
         'user' => auth()->user(),
         'users' => User::where('role_id', null)->get(),
-        'contribiteursUsers' => User::where('role_id', 2)->get()
+        'contribiteursUsers' => User::where('role_id', 2)->get(),
         ])->with('events', $events);
     }
 

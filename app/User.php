@@ -79,6 +79,16 @@ class User extends Authenticatable
       $this->events()->detach($event);
     }
 
+    public function participatedEvents()
+    {
+      return $this->events()->where('date', '<', now())->get();
+    }
+
+    public function fitureParticipateEvents()
+    {
+      return $this->events()->where('date', '>', now())->get();
+    }
+
     public function alreadyParticipating($event)
     {
       return !! $this->events->contains($event);
