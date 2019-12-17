@@ -57,9 +57,16 @@ class Event extends Model
       $client = new Client(); //GuzzleHttp\Client
       $geo = json_decode($client->request('GET', 'https://nominatim.openstreetmap.org/?'. http_build_query($data))->getBody(), TRUE);
 
+      if (isset($geo[0]))
       $event->update([
         'late' => $geo[0]['lat'],
         'long' => $geo[0]['lon']
       ]);
+      else {
+        $event->update([
+          'late' => 0,
+          'long' => 0
+        ]);
+      }
     }
 }

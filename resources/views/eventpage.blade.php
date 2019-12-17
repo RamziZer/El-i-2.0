@@ -67,7 +67,7 @@
 
     <div class="gird-container">
         <div class="gird-item gird-item-1 image">
-          {{-- <img src="{{ $events->avatar }}" alt=""> --}}
+          <img  class="image" src="{{ $events->avatar }}" alt=""> 
         </div>
         <div class="gird-item gird-item-2">
             <h1>{{$events->nom}}</h1>
@@ -86,9 +86,13 @@
             <li>Date d'ajout :  {{$events ->created_at }}</li>
         </ul>
         </div>
-        <div class="location">
+        <div class="location" id="location">
+          
         </div>
+        <i id="marker" class="fas fa-marker"></i>
         </div>
+        @guest 
+        @else
         <div class="gird-item gird-item-4 inscrire">
           @if(Auth::check() && !auth()->user()->alreadyParticipating($events))
           <form action="{{ route('participate', ['event' => $events]) }}" method="post">
@@ -135,9 +139,10 @@
           @endif
 
           <h1>{{ $events->noteFinal }}</h1>
-
+          @endguest
         </div>
     </div>
+    
     <div class="footer">
         <div class="inner-footer">
 
@@ -231,4 +236,16 @@
     </div>
 </body>
 
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.0.1/build/ol.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.0.1/css/ol.css" />
+
+<script>
+  var lat = 0.0;
+  var lon = 0.0;
+</script>
+<script src="{{asset('js/map.js')}}"></script>
 </html>

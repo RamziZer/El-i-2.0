@@ -10,8 +10,6 @@
             <h1>Trouvez tous les évènements qui vous intéressent</h1>
             <div class="form-box">
                 <input type="text" class="search-field event" name="name" placeholder="Events,Peronnes ..." value={{ old('name') }}>
-                <input type="date" name="date" class="search-field location" />
-                <input type="text" class="search-field location" name="ville" placeholder="Ville">
                 <button class="search-btn" type="submit">Rechercher</button>
             </div>
         </form>
@@ -19,7 +17,7 @@
 <div class="containe">
     @foreach($events as $event)
         <div class="box">
-            <img src="{{ asset('css/img/image1.jpg') }}">
+            <img  class="image" src="{{ $event->avatar }}" alt=""> 
                 <h1>{{$event->nom}}</h1>
             <div class="des">
                 <p>{{$event->date}}

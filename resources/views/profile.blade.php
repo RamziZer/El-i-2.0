@@ -19,7 +19,6 @@
         {{--     @include('inc.messages')
         --}}
         <article class="profile">
-            <img src="/home/hririche/git/el-i/ProjetWebL3/profile-img.png">
             <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
             <ul>
                 <li style="font-family: 'Alatsi', sans-serif; font-size: 19px;">{{ $user->name }}</li>
@@ -39,8 +38,8 @@
               @foreach ($user->participatedEvents as $event)
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> {{ $event->nom }}</h2>
-                    <img src="/home/hririche/git/el-i/img/nimg.jpg">
-                    <button>click Here <i class="fas fa-glasses"></i></button>
+                    <img  class="image" src="{{ $event->avatar }}" alt=""> 
+                    <button><a href="{{ route('events.show', ['event' => $event->id ])}}">Afficher</a><i class="fas fa-glasses"></i></button>
 
                 </div>
               @endforeach
@@ -49,27 +48,27 @@
               @foreach ($user->futureParticipateEvents as $event)
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> {{ $event->nom }}</h2>
-                    <img src="/home/hririche/git/el-i/img/nimg.jpg">
-                    <button>click Here <i class="fas fa-glasses"></i></button>
+                    <img  class="image" src="{{ $event->avatar }}" alt=""> 
+                    <button><a href="{{ route('events.show', ['event' => $event->id ])}}">Afficher</a><i class="fas fa-glasses"></i></button>
 
                 </div>
               @endforeach
             </section>
 
-            <section class="contribution">
+           {{--  <section class="contribution">
 
            {{--
                 @foreach($events as $event)
                 <div class="box">
                     <h2 style="font-family: 'Lato', sans-serif;"> {{$event->nom}}</h2>
-                    <img src="/home/hririche/git/el-i/img/nimg.jpg">
+                    <img src="src="{{ $events->avatar }}"">
                     <p>{{$event->date}}
                     </p>
                     <button><a href="{{ route('events.show', ['event' => $event->id ])}}">click Here <i class="fas fa-glasses"></i></button>
 
                 </div>
-                @endforeach --}}
-            </section>
+                @endforeach 
+            </section> --}}
             @if($user->isAdmin() || $user->isContributeur())
             @if($user->isAdmin())
             <section class="edit-profil">
@@ -212,7 +211,6 @@
                     </section>
                  @endif
                 </article>
-                {{ $events->links() }}
             </body>
             <script src="{{asset('js/profile.js')}}"></script>
 
