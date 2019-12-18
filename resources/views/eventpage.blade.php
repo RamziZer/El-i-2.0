@@ -106,7 +106,7 @@
           </form>
         @endif
             {{-- <button>s’inscrire / se désinscrire d'un événement</button> <br> --}}
-            @if($events->alreadyPassed() && auth()->user()->alreadyParticipating($events) && ! auth()->user()->alreadyReviewed($events) )
+            @if($events->alreadyPassed() && auth()->user()->alreadyParticipating($events) &&  auth()->user()->alreadyReviewed($events) )
             <div class="rat">
                 <form class="stars" action="{{ route('review', ['event' => $events->id ]) }}" method="POST">
                   @csrf

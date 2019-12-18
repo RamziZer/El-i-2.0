@@ -20,8 +20,8 @@ class CreateNotesTable extends Migration
             $table->bigInteger('event_id')->unsigned();
             $table->integer('note')->unsigned();
 
-            $table->foreign('user_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->foreign('event_id')->references('id')->on('roles')->onDelete('cascade');
+           // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+           // $table->foreign('event_id')->references('id')->on('event')->onDelete('cascade');
 
         });
     }

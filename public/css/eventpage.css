@@ -87,19 +87,18 @@ button:hover {
     color: blue;
 }
 
-.rat {
-    margin-top: 30px;
-    width: 93%;
+div.rat {
+    
+    width: 100%;
     max-width: 500px;
-    height:200px;
+    
     background: #111;
     color: #eee;
     border-radius: 5px ;
     border: 2px solid #444;
-    overflow: hidden;
 }
 
-form.stars {
+div.rat form.stars {
     width: 270px;
     display: block;
     margin: auto;

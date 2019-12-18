@@ -106,7 +106,7 @@ class User extends Authenticatable
 
     public function leaveReview($event, $note)
     {
-      $this->notes()->create([
+      return !! $this->notes()->create([
         'event_id' => $event,
         'note' => $note
       ]);

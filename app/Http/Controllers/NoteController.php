@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Note;
 use App\Event;
+use App\User;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
